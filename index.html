@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+    ></script> -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Webcam Demo</h1>
+      <video id="video" autoplay playsinline width="800" height="600"></video>
+      <div class="media-controls">
+        <div class="controls-group">
+          <p>Video Controls:</p>
+          <button class="btn btn-start" onclick="startVideo()">Start</button>
+          <button class="btn btn-stop" onclick="stopVideo()">Stop</button>
+          <p>Recording Controls:</p>
+          <button class="btn btn-start" onclick="startRecording()">
+            Start
+          </button>
+          <button class="btn btn-stop" onclick="stopRecording()">Stop</button>
+          
+        </div>
+        <div class="controls-group">
+          <span id="recording-status" class="statusChip hidden">Recording</span>
+          <label for="screenResolution">Resolution</label>
+          <select
+            name="screenResolution"
+            id="screenResolution"
+            onchange="resolutionChangeHandler()"
+          >
+            <option value="1280x720" default>1280x720</option>
+            <option value="1920x1080">1920x1080</option>
+            <option value="2560x1440">2560x1440</option>
+            <option value="3840x2160">3840x2160</option>
+          </select>
+        </div>
+      </div>
+      <div class="media-controls">
+        <a id="file-download" class="btn hidden">Download</a>
+      </div>
+      <!-- <a download="">Download</a> -->
+    </div>
+  </body>
+</html>
